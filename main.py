@@ -22,8 +22,8 @@ from pydownloader.downloader import Downloader
 import shorturl
 import xdlink
 
-tl_admin_users = ['RichZC','JeanMich3L','user3'] #Poner aqui los user con acceso permanente
-godlist = ['RichZC','JeanMich3L','admin3'] #Poner aqui los admin 
+tl_admin_users = ['EL_Wizard'] #Poner aqui los user con acceso permanente
+godlist = ['EL_Wizard'] #Poner aqui los admin 
 
 async def get_root(username):
     if os.path.isdir(config.ROOT_PATH+username)==False:
@@ -215,9 +215,8 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
         pass
 
     if '/start' in text:
-        reply = '👋UploaderProFast👋\nEs un bot para el manejo de archivos en telegam (descargas/subidas)\n\n'
-        reply += '<a href="https://github.com/ObisoftDev">Obisoft Dev Github</a>\n'
-        reply += '<a href="https://t.me/obisoftt">Obisoft Dev Telegram</a>'
+        reply = '👋Bot personal de Wizard👋\nEs un bot para el manejo de archivos en telegam (descargas/subidas)\n\n'
+        reply += '<a href="https://t.me/EL_Wizard">Wizard Dev Telegram</a>'
         message = await bot.send_message(ev.chat.id,reply,parse_mode='html')
         pass
     if '/add' in text and username in godlist:
@@ -347,7 +346,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
             await bot.send_file(ev.chat,txtsendname,
                                 caption=f'{txtsendname}',
                                 thumb='thumb.png',
-                                buttons=[Button.url('📯ObisoftDev','https://t.me/obisoftt')])
+                                buttons=[Button.url('📯WIZARD','https://t.me/EL_Wizard')])
             for fitem in listdir:
                 try:
                     os.unlink(fitem)
